@@ -89,8 +89,6 @@ export class CommonPaginationComponent implements OnInit {
 
   private setPaginationOptions(options: CommonPaginationDto) {
     this.form.setValue(options);
-    setTimeout(() => {
-      this.currentPage = +options.page;
-    });
+    this.currentPage = +options.page;
   }
 }

@@ -20,7 +20,7 @@
   </div>
 
   <div class="pagination-block">
-    <pagination [totalItems]="total"
+    <pagination [totalItems]="total" *ngIf="total"
                 [maxSize]="maxSize"
                 previousText="&lsaquo;" nextText="&rsaquo;"
                 [(ngModel)]="currentPage"

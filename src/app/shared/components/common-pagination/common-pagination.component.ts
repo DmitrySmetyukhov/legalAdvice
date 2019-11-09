@@ -72,10 +72,6 @@ export class CommonPaginationComponent implements OnInit {
     });
 
     this.form.valueChanges.subscribe((val: CommonPaginationDto) => {
-      if (isNaN(+val.page) || isNaN(+val.perPage) || !this.isCorrect(val)) {
-        return this.setPaginationOptions(val);
-      }
-
       this.router.navigate(['.'], {queryParams: val});
       this.onPaginationEventEmitter.emit(val);
     });
@@ -84,7 +80,7 @@ export class CommonPaginationComponent implements OnInit {
   private isCorrect = (params: CommonPaginationDto) => {
     const sortByParameterExists = this.sortingFields.find(item => item.name === params.sortBy);
     const perPageParameterExists = this.perPageList.find(item => item.name === params.perPage);
-    return params.page && params.perPage && params.sortBy && sortByParameterExists && perPageParameterExists;
+    return params.page && params.perPage && params.sortBy && sortByParameterExists && perPageParameterExists && !isNaN(+params.page) && !isNaN(+params.perPage);
   };
 
   private setPaginationOptions(options: CommonPaginationDto) {

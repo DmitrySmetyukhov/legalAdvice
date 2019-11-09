@@ -1,0 +1,33 @@
+<div class="cp-container" [formGroup]="form">
+  <div class="sort-by-block">
+    <ng-select formControlName="sortBy"
+               [items]="sortingFields"
+               bindLabel="name"
+               bindValue="name"
+               [clearable]="false"
+               [searchable]="false"
+    ></ng-select>
+  </div>
+
+  <div class="per-page-block">
+    <ng-select formControlName="perPage"
+               [items]="perPageList"
+               bindLabel="name"
+               bindValue="name"
+               [clearable]="false"
+               [searchable]="false"
+    ></ng-select>
+  </div>
+
+  <div class="pagination-block">
+    <pagination [totalItems]="total"
+                [maxSize]="maxSize"
+                previousText="&lsaquo;" nextText="&rsaquo;"
+                [(ngModel)]="currentPage"
+                [ngModelOptions]="{standalone: true}"
+                (pageChanged)="pageChanged($event)"
+    ></pagination>
+  </div>
+
+</div>
+

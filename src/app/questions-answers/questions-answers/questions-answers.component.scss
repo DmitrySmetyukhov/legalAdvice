@@ -1,0 +1,55 @@
+.table-block {
+  .c-table {
+    padding: 0 20px;
+    font-size: 16px;
+
+    .c-head, .c-row {
+      display: flex;
+
+      .c-cell, .ch {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        word-break: break-word;
+        padding: 0 5px;
+      }
+
+      .c-1 {
+        width: 5%;
+      }
+
+      .c-2 {
+        width: 25%;
+      }
+
+      .c-3 {
+        width: 10%;
+      }
+
+      .c-4 {
+        width: 35%;
+      }
+
+      .c-5 {
+        width: 25%;
+      }
+    }
+
+    .c-head {
+      height: 40px;
+      background: lightgray;
+    }
+
+    .c-row {
+      min-height: 40px;
+      border-bottom: 1px solid lightgray;
+
+      .c-cell {
+        input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}

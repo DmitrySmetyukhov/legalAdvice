@@ -1,0 +1,26 @@
+<app-common-pagination
+  [sortingFields]="sortingFields"
+  [total]="total"
+  (onPagination)="onPagination($event)"
+></app-common-pagination>
+
+<div class="table-block">
+  <div class="c-table">
+    <div class="c-head">
+      <div class="ch c-2">Full Name</div>
+      <div class="ch c-3">Language</div>
+      <div class="ch c-4">Description</div>
+      <div class="ch c-5">Url</div>
+    </div>
+    <div class="c-body">
+      <div class="c-row" *ngFor="let item of items">
+        <div class="c-cell c-2">{{item.full_name}}</div>
+        <div class="c-cell c-3">{{item.language}}</div>
+        <div class="c-cell c-4">{{item.description}}</div>
+        <div class="c-cell c-5">
+          <a [href]="item.url" target="_blank">{{item.url}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

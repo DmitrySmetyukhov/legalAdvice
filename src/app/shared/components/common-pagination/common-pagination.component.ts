@@ -19,6 +19,8 @@ export class CommonPaginationComponent implements OnInit {
         name: field
       };
     });
+
+    this.defaultQueryParams.sortBy = this.sortingFields[0].name;
   }
 
   @Input('maxSize') maxSize = 1;
@@ -38,7 +40,7 @@ export class CommonPaginationComponent implements OnInit {
   private defaultQueryParams: CommonPaginationDto = {
     page: '1',
     perPage: '10',
-    sortBy: 'name'
+    sortBy: ''
   };
 
   constructor(
